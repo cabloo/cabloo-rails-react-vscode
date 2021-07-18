@@ -1,20 +1,21 @@
 # README
 
-Using Visual Studio Code's new [Remote Containers](https://code.visualstudio.com/docs/remote/remote-overview) features, this repository
+Using Visual Studio Code's [Remote Containers](https://code.visualstudio.com/docs/remote/remote-overview) features, this repository
 is an example of how to utilize the VSCode functionality to run a complete development environment using containers. Please note that other
-than having VSCode (currently VSCode Insiders), the VSCode "Remote Development" plugin, and Docker (tested on Docker for macOS) installed, there are no other local dependencies.
+than having VSCode, the VSCode "Remote Development" plugin, and Docker installed, there are no other local dependencies.
 
 ## Prerequisites
 
-1. Install [Visual Studio Code Insiders](https://code.visualstudio.com/insiders/).
+1. Install [Visual Studio Code](https://code.visualstudio.com/).
 
 2. Install the [Remote Development plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack).
 
 3. Install Docker Desktop:
-  - [Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
-  - [macOS](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
-  - Linux:
-    - We'll assume if you're running Linux, you should know what you're doing
+
+- [Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
+- [macOS](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
+- Linux:
+  - We'll assume if you're running Linux, you should know what you're doing
 
 ## Things to Know
 
