@@ -7,7 +7,7 @@ services:
       NODE_ENV: "development"
       RAILS_ENV: "development"
     ports:
-      - "3001:3000"
+      - "3000:3000"
     volumes:
       - ./:/usr/src/app
     #   - ~/.gitconfig:/root/.gitconfig
@@ -23,9 +23,9 @@ services:
       - MYSQL_ROOT_HOST=%
       - MYSQL_DATABASE=dummy_development
     expose:
-      - "3307"
+      - "3306"
     ports:
-      - "3307:3306"
+      - "3306:3306"
     volumes:
       - "database:/var/lib/mysql"
       - ".:/docker-entrypoint-initdb.d"
