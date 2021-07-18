@@ -17,10 +17,6 @@ than having VSCode, the VSCode "Remote Development" plugin, and Docker installed
 - Linux:
   - We'll assume if you're running Linux, you should know what you're doing
 
-## Things to Know
-
-- This repo orchestrates a docker-compose setup, so you should likely test the docker-compose setup if you're not using macOS.
-
 ## Starting the Stack
 
 1. Clone this repository and open the directory in VSCode
@@ -36,6 +32,10 @@ the application container. From there, a developer should be able to do all of t
 NodeJS packages via yarn, running migrations and rake tasks, etc. without having to worry about interacting directly with Docker.
 
 Once work is done, shutting down the stack is as simple as closing the folder window in VSCode.
+
+## Application structure
+
+This follows typical Rails application structure, plus React components located in `app/javascript/components/`. To utilize those components on a specific controller, first add a pack to `app/javascript/packs/` mimicking `home.js` in that directory. Then add a new view with the same name as your controller with `<%= javascript_pack_tag 'home' %>`.
 
 ## Benefits
 
