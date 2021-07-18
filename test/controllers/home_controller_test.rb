@@ -3,7 +3,8 @@
 require 'test_helper'
 
 class HomeControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  test "200 response" do
+    get "/"
+    assert_response :success
+  end
 end

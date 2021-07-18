@@ -17,18 +17,17 @@ services:
     command: "bundle exec rails server -b 0.0.0.0"
 
   database:
-    image: mysql:5
+    image: mysql:5.7
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD='yes'
       - MYSQL_ROOT_HOST=%
-      - MYSQL_DATABASE=dummy_development
     expose:
       - "3306"
     ports:
       - "3306:3306"
     volumes:
-      - "database:/var/lib/mysql"
-      - ".:/docker-entrypoint-initdb.d"
+      - database:/var/lib/mysql
+      - ./db/init.d:/docker-entrypoint-initdb.d
 
 volumes:
   database:
