@@ -35,7 +35,35 @@ Once work is done, shutting down the stack is as simple as closing the folder wi
 
 ## Application structure
 
-This follows typical Rails application structure, plus React components located in `app/javascript/components/`. To utilize those components on a specific controller, first add a pack to `app/javascript/packs/` mimicking `home.js` in that directory. Then add a new view with the same name as your controller with `<%= javascript_pack_tag 'home' %>`.
+This follows typical Rails API application structure. Note that API mode is intended to not have any plain HTML controllers besides potentially some very static HTML - no using cookies, sessions, etc.
+
+### Adding backend resources
+
+The `rails g scaffold` command will automatically configure the model, controller, JSON builder, routes, and test structure for you. For example:
+
+```bash
+rails g scaffold todo name:string
+rails db:migrate
+cat >> db/seeds.rb << EOF
+
+Todo.create(name: "First todo")
+Todo.create(name: "Second todo")
+Todo.create(name: "Third todo")
+EOF
+rails db:seed
+rake
+```
+
+After, you can check that the API works:
+
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"todo":{"name":"From CLI"}}' http://localhost:3000/todos
+curl http://localhost:3000/todos
+```
+
+### Editing React code
+
+React components are located in `app/javascript/components/`. To utilize those components on a specific controller, first add a pack to `app/javascript/packs/` mimicking `home.js` in that directory. Then add a new view with the same name as your controller with `<%= javascript_pack_tag 'home' %>`.
 
 ## Benefits
 
