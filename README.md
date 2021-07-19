@@ -63,7 +63,7 @@ curl http://localhost:3000/todos
 
 ### Editing React code
 
-React components are located in `app/javascript/components/`. To utilize those components on a specific controller, first add a pack to `app/javascript/packs/` mimicking `home.js` in that directory. Then add a new view with the same name as your controller with `<%= javascript_pack_tag 'home' %>`.
+React Typescript components are located in `app/javascript/components/`. To utilize those components on a specific controller, first add a pack to `app/javascript/packs/` mimicking `home.tsx` in that directory. Then add a new view with the same name as your controller with `<%= javascript_pack_tag 'home' %>`.
 
 ## Benefits
 
